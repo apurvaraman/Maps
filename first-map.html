@@ -1,0 +1,71 @@
+<!--  The most basic web map. -->
+<!DOCTYPE html>
+<!-- Leaflet Guide: http://leafletjs.com/examples/quick-start/ -->
+<html lang="en">
+
+<head>
+    <style>
+    /* Gives us a map that takes up the full webpage */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        #map {
+            position: absolute;
+            top: 0;
+            bottom:0;
+            width: 100%;
+        }
+
+    </style>
+    <title> Base Layer </title>
+    <!-- Leaflet stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+    <!-- Leaflet javascript  -->
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    <!-- <script src="https://unpkg.com/proj4@2.5.0/dist/proj4.js"></script>
+    <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script> -->
+
+</head>
+
+<body>
+    <div id="map"> </div>
+    <script>
+    // I tried to do a thing with an example proj4 projection that wasn't web mercator, but their tileserver was a local projection for sweden or something... didn't exactly get around to making my own tiles :(
+
+    // var crs = new L.Proj.CRS('EPSG:3006',
+    //   '+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs',
+    //   {
+    //     resolutions: [
+    //       8192, 4096, 2048, 1024, 512, 256, 128
+    //     ],
+    //     origin: [0, 0]
+    //   })
+
+    var map = L.map('map').setView([38, -97], 1);
+
+
+    // var OpenStreetMap_HOT = L.tileLayer('http://api.geosition.com/tile/osm-bright-3006/{z}/{x}/{y}.png', {
+    //     maxZoom:10,
+    //     minZoom: 0,
+    //     continuousWorld: true,
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>',
+    // }).addTo(map);
+
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+    // L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
+        // Found these cool tiles on this list: https://wiki.openstreetmap.org/wiki/Tile_servers
+        attribution: 'OpenStreetMap, stamen toner',
+        maxZoom: 7,
+        minZoom: 0,
+    }).addTo(map);
+
+    var roundingerror = L.marker([38, -97]).addTo(map);
+    roundingerror.bindPopup("Potwin, KA").openPopup()
+
+    </script>
+</body>
+
+</html>
