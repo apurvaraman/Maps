@@ -4,7 +4,7 @@ Welcome to Apurva Raman's blog about maps. This is part of work I'm doing in [Im
 
 [introductions](https://apurvaraman.github.io/maps/introductions)
 
-[perils]()
+[perils](https://apurvaraman.github.io/maps/perils)
 
 [thinking poetically]()
 

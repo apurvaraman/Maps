@@ -15,7 +15,7 @@ I then happened upon the "Tribal Lands Ceded to the United States" data set. I f
 
 When I brought the map into mapbox, I had the opacity of all the polygons at 0.9. At first I didn't realized how much overlap there was in certain areas (surely the US wouldn't take the same land multiple times?) but when I reduced the opacity, I was really surprised to see there were so many areas with multiple overlaps.
 
-I looked for the data source and started looking through [this report](https://memory.loc.gov/ammem/amlaw/lwss-ilc.html). This data comes from a report Eighteenth Annual Report of the Bureau of American Ethnology to the Secretary of the Smithsonian Institution, 1896-1897, and is also part of a serial set. The report contains several maps and reports which have been digitized and turned into a polygons in geojson.
+I looked for the data source and started looking through [this report](https://memory.loc.gov/ammem/amlaw/lwss-ilc.html). This data comes from a report Eighteenth Annual Report of the Bureau of American Ethnology to the Secretary of the Smithsonian Institution, 1896-1897, and is also part of a serial set. The report contains data and several maps which have been digitized and turned into polygons in geojson.
 
 ![One of the maps of Washington State from the report](https://apurvaraman.github.io/maps/week2assets/wa.jpeg)
 
