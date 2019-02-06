@@ -1,0 +1,63 @@
+<!-- Documentation: https://www.mapbox.com/mapbox-gl-js/style-spec/#sources-geojson -->
+<!-- Mapbox styles: https://github.com/mapbox/mapbox-gl-styles -->
+<!-- Tribal lands data: https://catalog.data.gov/dataset/tribal-lands-ceded-to-the-united-states-feature-layer-7b7be-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
+    <title> Tribal Lands Ceded to the United States, 1784-1894 </title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div id="map"> </div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJhbWFuIiwiYSI6ImNqcmphb3BuaDAwdTc0Ym50cHBpMmpxcWMifQ.C6Kianm-Y8lCXTcvw0YKRw';
+
+    var map = new mapboxgl.Map({
+        container: 'map', // you need this
+        style: 'mapbox://styles/mapbox/light-v9', // you also need this
+        center: [-104.8202, 41.1400], // [long, lat] Different than leaflet, different than google maps, same as geojson!
+        zoom: 4,
+    });
+
+
+    // Source is where the data is coming from, layer is what you're going to do with it.
+    map.on('load', function() {
+        map.addSource('ceded', {
+            type: 'geojson',
+            data: 'ceded.geojson'
+        });
+        map.addLayer({
+            id: 'plants',
+            type: 'fill',
+            source: 'ceded',
+            paint: {
+                'fill-color': 'green',
+                'fill-opacity': .25,
+                'fill-outline-color': 'black'
+            }
+
+        })
+    });
+    </script>
+</body>
+
+</html>
