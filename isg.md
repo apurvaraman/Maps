@@ -1,8 +1,9 @@
 ---
 layout: post
 author: Apurva Raman
-title: contextualizing the isg visit
+title: isg
 ---
+# contextualizing the isg visit
 
 I found my feelings about the readings and the groups to be quite connected, so I consolidated the two.
 
