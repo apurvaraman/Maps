@@ -8,9 +8,9 @@ Welcome to Apurva Raman's blog about maps. This is part of work I'm doing in [Im
 
 [thinking poetically]()
 
-[the isabella stewart gardner]()
+[the isabella stewart gardner](https://apurvaraman.github.io/maps/isg)
 
-[a sense of place]()
+[a sense of place](https://apurvaraman.github.io/maps/planning))
 
 [the view from above]()
 
